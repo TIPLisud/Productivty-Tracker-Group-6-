@@ -1,0 +1,109 @@
+{
+    "jiro": {
+        "password": "123",
+        "total_distractions": 0,
+        "projects_completed": 0,
+        "projects": [
+            {
+                "type": "Solo",
+                "name": "proj jiro 1",
+                "deadline": "2026-04-13",
+                "progress": 100,
+                "tasks": [],
+                "distractions_logged": 0,
+                "status": "Completed"
+            },
+            {
+                "type": "Solo",
+                "name": "proj 1",
+                "deadline": "2026-04-13",
+                "progress": 0,
+                "tasks": [],
+                "distractions_logged": 0,
+                "status": "In Progress"
+            },
+            {
+                "type": "Solo",
+                "name": "project tester",
+                "deadline": "2026-1-23",
+                "progress": 0,
+                "tasks": [],
+                "distractions_logged": 0,
+                "status": "In Progress"
+            },
+            {
+                "type": "Solo",
+                "name": "2",
+                "deadline": "2025-12-23",
+                "progress": 0,
+                "tasks": [],
+                "distractions_logged": 0,
+                "status": "In Progress"
+            },
+            {
+                "type": "Solo",
+                "name": "proj5",
+                "deadline": "2024-24-1",
+                "progress": 0,
+                "tasks": [],
+                "distractions_logged": 0,
+                "status": "In Progress"
+            }
+        ],
+        "group_projects": [
+            {
+                "type": "Group",
+                "name": "grp 1 test",
+                "deadline": "2026-4-14",
+                "progress": 0,
+                "tasks": [],
+                "distractions_logged": 0,
+                "status": "In Progress",
+                "leader": "jiro",
+                "members": [
+                    "user2"
+                ]
+            },
+            {
+                "type": "Group",
+                "name": "proj1",
+                "deadline": "2026-4-14",
+                "progress": 0,
+                "tasks": [
+                    {
+                        "task_name": "do this",
+                        "assigned_to": [
+                            "user2"
+                        ],
+                        "is_done": true
+                    }
+                ],
+                "distractions_logged": 0,
+                "status": "In Progress",
+                "leader": "jiro",
+                "members": [
+                    "jiro",
+                    "user2"
+                ]
+            },
+            {
+                "name": "jiro",
+                "deadline": "2026-4-14",
+                "progress": 90,
+                "tasks": [],
+                "distractions_logged": 1,
+                "leader": "jiro",
+                "members": [
+                    "jiro",
+                    "user2"
+                ]
+            }
+        ]
+    },
+    "user2": {
+        "password": "",
+        "total_distractions": 1,
+        "projects_completed": 0,
+        "invites": []
+    }
+}
