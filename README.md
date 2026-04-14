@@ -3,7 +3,7 @@ OOP Final Project Productivity Tracker
 
 ## 👥 Team Members  
   
-- **IAN LISUD**  
+- **Ian Paulo Lisud**  
 - **Jesse Matthew Esteta**  
 - **Jiro Luis Katindig**  
 - **Francis Elijah Formalejo**  
