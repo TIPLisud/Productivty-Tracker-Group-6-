@@ -1,5 +1,5 @@
 # Productivty-Tracker-Group-6-
-OOP Final Project Productivity Tracker 
+OOP Final Project Employee Project Management System
 
 ## 👥 Team Members  
   
