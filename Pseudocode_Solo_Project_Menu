@@ -1,0 +1,47 @@
+FUNCTION SoloProjectMenu():
+    WHILE True:
+        DISPLAY "Solo Project Menu:"
+        DISPLAY "1. Add Task, 
+		2. Show Task, 
+		3. Update Progress, 
+		4. Exit"
+        
+        INPUT choice
+        
+        IF choice == 1:
+            # ADD TASK 
+            DISPLAY "Enter task name: ", "Enter work time: ", "Set Deadline (MM-DD-YYYY):"
+            INPUT Taskname, Taskworktime, Taskdeadline
+            APPEND data TO List
+            SET ID = List.count
+            DISPLAY "Task added successfully."
+            RESTART Loop (Go back to SPM)
+            
+        ELSE IF choice == 2:
+            # SHOW TASK 
+            IF List IS empty:
+                DISPLAY "No ongoing Projects"
+            ELSE:
+                DISPLAY All Projects
+            RESTART Loop (Go back to SPM)
+            
+        ELSE IF choice == 3:
+            # UPDATE PROGRESS 
+            DISPLAY Projects
+            DISPLAY "Enter Project number to update: "
+            INPUT projectnumber
+            
+            IF projectnumber IS NOT valid number:
+                DISPLAY "Invalid number"
+            ELSE:
+                INPUT progress_percentage
+                SET Progress = progress_percentage
+            RESTART Loop (Go back to SPM)
+            
+        ELSE IF choice == 4:
+            # EXIT 
+            GO TO Main Menu (MM)
+            
+        ELSE:
+            # INVALID INPUT
+            RESTART Loop (Go back to SPM)
