@@ -13,29 +13,29 @@ OOP Final Project Productivity Tracker
   
 **Marqui Cenar** - add role and descr  
     
-📌 Overview   
+**📌 Overview**   
 The Productivity Management System is a command-line based application designed to help users efficiently manage their tasks, projects, and overall productivity. It allows users to create accounts, track personal and group projects, monitor progress, and log distractions to improve focus and performance.  
   
 The system supports both solo and collaborative workflows, enabling users to work independently or as part of a team. With built-in features such as deadlines, task assignment, and project tracking, the application helps users stay organized and meet their goals effectively.  
   
-✨ Features   
-🔹 🔐 User Authentication System  
+**✨ Features**   
+🔹 **🔐 User Authentication System**  
 Create accounts and securely log in using a username and password.  
-🔹 📁 Solo Project Management  
+🔹 **📁 Solo Project Management**  
 Create, manage, and track progress of individual projects with deadlines.  
-🔹 👥 Group Project Collaboration  
+🔹 **👥 Group Project Collaboration**  
 Create group projects, invite members, and collaborate in real-time.  
-🔹 📊 Progress Tracking  
+🔹 **📊 Progress Tracking**  
 Update project completion percentages and monitor overall status.  
-🔹⏰ Deadline Monitoring  
+🔹**⏰ Deadline Monitoring**  
 Automatically highlights urgent or overdue projects.  
-🔹✅ Task Assignment System  
+🔹**✅ Task Assignment System**  
 Assign tasks to specific group members and track completion.  
-🔹📥 Invitation System  
+🔹**📥 Invitation System**  
 Send and accept project invitations between users.  
-🔹⚠️ Distraction Logging  
+🔹**⚠️ Distraction Logging**  
 Record distractions per project and track total distractions per user.  
-🔹📂 Data Persistence (JSON Storage)  
+🔹**📂 Data Persistence (JSON Storage)**  
 Saves all user data and project information locally for future sessions.  
-🔹🧭 Interactive CLI Interface  
+🔹**🧭 Interactive CLI Interface**  
 Easy-to-navigate menu system for smooth user experience.  
