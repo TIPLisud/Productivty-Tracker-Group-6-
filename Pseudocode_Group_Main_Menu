@@ -1,0 +1,59 @@
+FUNCTION GroupProjectMenu():
+    WHILE True:
+        DISPLAY "Group Project Menu:"
+        DISPLAY "1. Add Task, 2. Show Task, 3. Update Progress, 4. Exit"
+        
+        INPUT choice
+        
+        IF choice == 1:
+            # ADD TASK & INVITE MEMBERS
+            DISPLAY "Enter task name: ", "Set members: "
+            INPUT Taskname, No_of_members
+            
+            # VALIDATION
+            IF username DOES NOT exist:
+                DISPLAY "Username not found, please try again."
+            ELSE:
+                INVITE username
+                DISPLAY "An invitation has been sent to {username}"
+                APPEND task TO List
+                SET ID = List.count
+                DISPLAY "Task added successfully."
+            RESTART Loop (Go to SPM/GPM)
+
+        ELSE IF choice == 2:
+            # SHOW TASK & INVITATIONS
+            IF List IS empty:
+                DISPLAY "No ongoing Projects/Invitations"
+                RESTART Loop
+            ELSE:
+                IF List has Invitation:
+                    DISPLAY Invitations
+                    IF Accept Invitation IS "Yes":
+                        ACCEPT Invitation
+                        ADD Group to Task as member
+                    ELSE:
+                        REJECT Invitation
+                ELSE:
+                    DISPLAY All Projects
+            RESTART Loop (Go to SPM/GPM)
+
+        ELSE IF choice == 3:
+            # UPDATE PROGRESS
+            DISPLAY Projects
+            DISPLAY "Enter Project number to update: "
+            INPUT projectnumber
+            
+            IF projectnumber IS NOT valid number:
+                DISPLAY "Invalid number"
+            ELSE:
+                INPUT progress_percentage
+                SET Progress = progress_percentage
+            RESTART Loop (Go to SPM/GPM)
+
+        ELSE IF choice == 4:
+            # EXIT
+            GO TO Main Menu (MM)
+            
+        ELSE:
+            RESTART Loop (Go to SPM/GPM)
