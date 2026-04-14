@@ -3,16 +3,11 @@ OOP Final Project Productivity Tracker
 
 ## 👥 Team Members  
   
-- **IAN LISUD** – Project Leader    
-  Description  
-- **Jesse Matthew Esteta** – add role and descr  
-  
-- **Jiro Luis Katindig** – add role and descr  
-  
-- **Francis Elijah Formalejo** - add role and descr  
-  
-- **Marqui Cenar** - add role and descr  
-    
+- **IAN LISUD**  
+- **Jesse Matthew Esteta**  
+- **Jiro Luis Katindig**  
+- **Francis Elijah Formalejo**  
+- **Marqui Cenar**  
 **📌 Overview**   
 The Productivity Management System is a command-line based application designed to help users efficiently manage their tasks, projects, and overall productivity. It allows users to create accounts, track personal and group projects, monitor progress, and log distractions to improve focus and performance.  
   
