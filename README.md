@@ -84,31 +84,26 @@ The system supports both solo and collaborative workflows, enabling users to wor
 ---
 
 ## 🚀 Getting Started
+```bash```
+1. Clone the Repository
+Copy the project files from GitHub to your computer:
 ```bash
-# 1. Clone the repository
-git clone [https://github.com/your-username/productivity-tracker.git](https://github.com/your-username/productivity-tracker.git)
-
-# 2. Navigate to the project folder
-cd productivity-tracker
-
-# 3. Run the application
-python main.py
-
-
-# Follow these steps to deploy the system on your local machine.
-
-# 1. Clone the Repository
-#Copy the project files from GitHub to your computer:
-
-git clone https://github.com/katindigcpe/productivity-tracker.git
-
-#2. Navigate to the Source
-#Move into the project folder and enter the source directory where the GUI logic resides:
+git clone https://github.com/TIPLisud/Productivty-Tracker-Group-6-.git
+```
+2. Navigate to the Source
+Move into the project folder and enter the source directory where the GUI logic resides:
+```bash
 cd productivity-tracker/Productivity_Tracker
-
-#3. Launch the Application
-#Run the main script using Python 3:
-python Main.py
+```
+3. Launch the Application
+Run the main script using Python 3
+    On windows:
+```bash
+py Main.py
+```
+   On Mac/Linux:
+```bash
+python3 Main.py
 ```
 
 ---
