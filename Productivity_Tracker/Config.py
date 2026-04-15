@@ -2,9 +2,9 @@ WINDOW_TITLE = "Employee Project Management System"
 WINDOW_SIZE = "700x550"
 
 # Fonts
-FONT_NORMAL = ('Helvetica', 10)
-FONT_HEADER = ('Helvetica', 16, 'bold')
-FONT_WARNING = ('Helvetica', 12, 'bold')
+FONT_NORMAL = ('Century Gothic', 12)
+FONT_HEADER = ('Copperplate', 18, 'bold')
+FONT_WARNING = ('Helvetica', 14, 'bold')
 
 # Dark Mode Colors
 BG_COLOR = "#2b2b2b"          # Main dark background
