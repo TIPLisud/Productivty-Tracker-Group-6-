@@ -3,6 +3,7 @@ from tkinter import ttk
 import Config
 import Authentication
 import Dashboard
+import Database # <--- Added this import
 
 class ProjectManagementSystem(tk.Tk):
     def __init__(self):
@@ -48,5 +49,6 @@ class ProjectManagementSystem(tk.Tk):
         Dashboard.show_dashboard(self)
 
 if __name__ == "__main__":
+    Database.load_data()  # <--- LOAD DATA HERE BEFORE THE APP STARTS!
     app = ProjectManagementSystem()
     app.mainloop()

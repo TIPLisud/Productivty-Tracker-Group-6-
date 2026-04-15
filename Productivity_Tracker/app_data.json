@@ -1,0 +1,14 @@
+{
+    "users": {
+        "admin": "password",
+        "ian1": "1",
+        "katindig": "1",
+        "ian": "1",
+        "jiro": "1",
+        "francis": "1",
+        "marqui": "1",
+        "jesse": "1"
+    },
+    "solo_projects": [],
+    "group_projects": []
+}

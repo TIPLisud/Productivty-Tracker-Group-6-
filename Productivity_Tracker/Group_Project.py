@@ -60,7 +60,6 @@ def show_create_group(app):
             messagebox.showerror("Error", "Please set the number of members and generate fields.")
             return
 
-        # NEW: Put them in a pending dictionary instead of adding them directly
         pending_dict = {}
         for var in member_entries:
             m_name = var.get().strip().lower()
@@ -81,8 +80,8 @@ def show_create_group(app):
             "id": str(uuid.uuid4()),
             "name": name,
             "leader": app.current_user,
-            "members": {}, # <--- EMPTY! They join when they accept.
-            "pending_invites": pending_dict, # <--- Stuck in waiting room.
+            "members": {}, 
+            "pending_invites": pending_dict, 
             "tasks": []  
         }
         
@@ -90,6 +89,7 @@ def show_create_group(app):
             Database.DB["group_projects"] = []
             
         Database.DB["group_projects"].append(new_project)
+        Database.save_data() # <--- SAVES THE NEW GROUP PROJECT
         messagebox.showinfo("Success", "Group project created and invites sent!")
         app.show_dashboard()
 
@@ -97,7 +97,6 @@ def show_create_group(app):
 
 # --- MAIN ROUTING LOGIC ---
 def open_group_project(app, project):
-    # Failsafes
     if "tasks" not in project:
         project["tasks"] = []
     if "pending_invites" not in project:
@@ -105,14 +104,12 @@ def open_group_project(app, project):
     if "members" not in project:
         project["members"] = {}
         
-    # Routing Logic
     if project['leader'] == app.current_user:
         show_group_leader_window(app, project)
     elif app.current_user in project.get("pending_invites", {}) and project["pending_invites"][app.current_user]["status"] == "Pending":
-        show_invite_window(app, project) # Route to the invite screen!
+        show_invite_window(app, project) 
     else:
         show_group_member_window(app, project)
-
 
 # --- DEDICATED INVITATION SCREEN ---
 def show_invite_window(app, project):
@@ -130,9 +127,10 @@ def show_invite_window(app, project):
 
     def accept_invite():
         project["pending_invites"][app.current_user]["status"] = "Accepted"
-        project["members"][app.current_user] = 0 # Officially added to the group
+        project["members"][app.current_user] = 0 
+        Database.save_data() # <--- SAVES ACCEPTED INVITE
         messagebox.showinfo("Success", "You have officially joined the project!")
-        open_group_project(app, project) # Instantly reload into the Member View
+        open_group_project(app, project) 
 
     def show_decline_reason():
         btn_frame.pack_forget() 
@@ -153,12 +151,12 @@ def show_invite_window(app, project):
         
         project["pending_invites"][app.current_user]["status"] = "Declined"
         project["pending_invites"][app.current_user]["reason"] = reason
+        Database.save_data() # <--- SAVES DECLINED INVITE
         messagebox.showinfo("Declined", "Invitation declined. The leader will see your reason.")
         app.show_dashboard()
 
     ttk.Button(reason_frame, text="Submit Decline", command=submit_decline).pack(pady=10)
     ttk.Button(reason_frame, text="Cancel", command=lambda: [reason_frame.pack_forget(), btn_frame.pack(pady=20)]).pack()
-
 
 # --- LEADER WINDOW ---
 def show_group_leader_window(app, project):
@@ -167,7 +165,6 @@ def show_group_leader_window(app, project):
     
     ttk.Label(app.main_frame, text=f"Leader View: {project['name']}", style='Header.TLabel').pack(pady=10)
 
-    # SMART FEATURE: Automatically calculate all member's progress before showing it!
     for member_name in project['members']:
         member_tasks = [t for t in project["tasks"] if t["assignee"] == member_name]
         if member_tasks:
@@ -218,7 +215,6 @@ def show_group_leader_window(app, project):
             messagebox.showerror("Error", "All fields are required to assign a task.")
             return
         
-        # TIME STAMP
         current_time = datetime.now().strftime("%Y-%m-%d %I:%M %p")
         
         project["tasks"].append({
@@ -227,8 +223,9 @@ def show_group_leader_window(app, project):
             "description": desc,
             "deadline": deadline,
             "status": "Pending",
-            "date_assigned": current_time # Sent to the database!
+            "date_assigned": current_time 
         })
+        Database.save_data() # <--- SAVES THE NEWLY ASSIGNED TASK
         messagebox.showinfo("Success", f"Task assigned to @{assignee}!")
         show_group_leader_window(app, project) 
 
@@ -245,8 +242,7 @@ def show_group_leader_window(app, project):
             date_given = task.get("date_assigned", "Unknown")
             ttk.Label(tasks_frame, text=f"[{task['status']}] @{task['assignee']} - {task['description']} (Given: {date_given} | Due: {task['deadline']})", foreground=status_color).pack(anchor=tk.W, pady=2)
 
-
-# --- MEMBER WINDOW (Updated to fix Capitalization Bugs) ---
+# --- MEMBER WINDOW ---
 def show_group_member_window(app, project):
     app.clear_frame()
     ttk.Button(app.main_frame, text="← Back", command=app.show_dashboard).pack(anchor=tk.W, pady=5)
@@ -254,16 +250,13 @@ def show_group_member_window(app, project):
     ttk.Label(app.main_frame, text=f"Member Workspace: {project['name']}", style='Header.TLabel').pack(pady=10)
     ttk.Label(app.main_frame, text=f"Leader: @{project['leader']}").pack()
 
-    # FIX: Force both the assigned name and current user to lowercase so they always match perfectly!
     current_user_lower = app.current_user.lower()
     my_tasks = [t for t in project["tasks"] if t.get("assignee", "").lower() == current_user_lower]
     
     if not my_tasks:
-        # --- SCENARIO A: NO TASKS ASSIGNED YET ---
         frame = ttk.LabelFrame(app.main_frame, text="Update Your General Progress (%)", padding=15)
         frame.pack(pady=10, fill=tk.X)
 
-        # FIX: Also use lowercase when checking the dictionary
         current_progress = project['members'].get(current_user_lower, project['members'].get(app.current_user, 0))
         progress_var = tk.IntVar(value=current_progress)
         
@@ -278,8 +271,8 @@ def show_group_member_window(app, project):
         progress_var.trace_add('write', update_label)
 
         def save_member_progress():
-            # Save using lowercase so the leader sees it
             project['members'][current_user_lower] = progress_var.get()
+            Database.save_data() # <--- SAVES THE GENERAL PROGRESS UPDATES
             messagebox.showinfo("Success", "General progress updated!")
             app.show_dashboard()
 
@@ -287,12 +280,10 @@ def show_group_member_window(app, project):
         ttk.Label(app.main_frame, text="The leader has not assigned you any specific tasks yet.", foreground="gray").pack(pady=20)
         
     else:
-        # --- SCENARIO B: TASKS ARE ASSIGNED ---
         total_tasks = len(my_tasks)
         completed_tasks = len([t for t in my_tasks if t["status"] == "Completed"])
         current_progress = int((completed_tasks / total_tasks) * 100)
         
-        # Save to database instantly (using lowercase)
         project['members'][current_user_lower] = current_progress
 
         frame = ttk.LabelFrame(app.main_frame, text="Your Automated Progress", padding=15)
@@ -321,14 +312,14 @@ def show_group_member_window(app, project):
                 
                 def mark_done(t=task):
                     t["status"] = "Completed"
+                    Database.save_data() # <--- SAVES COMPLETED TASK STATUS
                     messagebox.showinfo("Success", "Task completed! Progress bar updated.")
-                    show_group_member_window(app, project) # Refresh UI
+                    show_group_member_window(app, project) 
 
                 ttk.Button(row, text="✔ Mark Done", command=mark_done).pack(side=tk.RIGHT, padx=10)
             else:
                 ttk.Label(row, text=status_text, foreground="#51cf66", width=45).pack(side=tk.LEFT)
     
-    # SMART PROGRESS (Final Dictionary Save)
     total_tasks = len(my_tasks)
     if total_tasks > 0:
         completed_tasks = len([t for t in my_tasks if t["status"] == "Completed"])
@@ -336,5 +327,5 @@ def show_group_member_window(app, project):
     else:
         current_progress = project['members'].get(current_user_lower, 0)
 
-    # Save dictionary updates
     project['members'][current_user_lower] = current_progress
+    Database.save_data() 

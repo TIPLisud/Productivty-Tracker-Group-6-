@@ -42,6 +42,7 @@ def show_create_solo(app):
             "owner": app.current_user
         }
         Database.DB["solo_projects"].append(new_project)
+        Database.save_data() # <--- SAVES THE NEW SOLO PROJECT
         messagebox.showinfo("Success", "Solo project created successfully!")
         app.show_dashboard()
 
@@ -84,6 +85,7 @@ def open_solo_project(app, project):
 
     def save_progress():
         project['progress'] = progress_var.get()
+        Database.save_data() # <--- SAVES THE UPDATED PROGRESS
         messagebox.showinfo("Success", "Progress updated!")
         app.show_dashboard()
 

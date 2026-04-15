@@ -69,6 +69,7 @@ def show_signup_screen(app):
             return
 
         Database.DB["users"][user] = password
+        Database.save_data() # <--- SAVES NEW ACCOUNT PERMANENTLY!
         messagebox.showinfo("Success", f"Account created for '{user}'! You can now sign in.")
         show_login_screen(app)
 
