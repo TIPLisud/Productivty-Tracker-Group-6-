@@ -1,6 +1,9 @@
 # Productivty-Tracker-Group-6-
 OOP Final Project Employee Project Management System
 
+<div align="center">
+<img src="https://64.media.tumblr.com/13b788eb2e4c4e639e0833f1fd4a308a/7dd148b0ddebb756-74/s2048x3072/b8a3ae51c8adf5d8ba13fc5a6e081a347d27c54c.gif" width="100%" height="100px" style="object-fit: cover;">
+
 ## 👥 Team Members  
   
 - **Ian Paulo Lisud**  
