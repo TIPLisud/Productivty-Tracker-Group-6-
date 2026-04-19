@@ -1,6 +1,9 @@
 <div align="center">
-![Alt Text](Productivty-Tracker-Group-6-/EPMS LOGO.png
-)
+
+  # Productivity Management System
+  <h3 align="center" style="color:gray;">A High-Performance Python GUI for Tracking Workflows</h3>
+</div>
+
 # Productivity Management System
 <h3 align="center" style="color:gray;">A High-Performance Python GUI for Tracking Workflows</h3>
 
