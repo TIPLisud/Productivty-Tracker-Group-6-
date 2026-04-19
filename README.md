@@ -3,7 +3,7 @@
 # Productivity Management System
 <h3 align="center" style="color:gray;">A High-Performance Python GUI for Tracking Workflows</h3>
 
-<img src="https://i.pinimg.com/originals/39/7b/c2/397bc20ad2da1a5920c1347052aea03d.gif" width="100%" height="150px" style="object-fit: cover; border-radius: 10px;"/>
+<img src="https://img.wattpad.com/e45d9c9faf1b6113e7b5247c72e4101e6bf7c86b/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f776174747061642d6d656469612d736572766963652f53746f7279496d6167652f4a556249636878575031396d36513d3d2d313131333733323830312e3136396133303130386330666536306632353837343138363239322e676966" width="100%" height="150px" style="object-fit: cover; border-radius: 10px;"/>
 
 <pre>
  ██████   ██████  ██████      ███████ ██ ███    ██  █████  ██          ██████  ██████   ██████       ██ ███████  ██████ ████████
