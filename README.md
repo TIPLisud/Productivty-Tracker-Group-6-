@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="EPMS-LOGO-HD.png" alt="EPMS Logo" width="100">
+  <img src="EPMS-LOGO-HD.png" alt="EPMS Logo" width="900">
 
 # 
 <h3 align="center" style="color:gray;">A High-Performance Python GUI for Tracking Workflows</h3>
