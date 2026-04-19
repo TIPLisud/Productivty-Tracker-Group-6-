@@ -1,5 +1,9 @@
 <div align="center">
-
+  <img src="EPMS-LOGO1.png" alt="EPMS Logo" width="600">
+  
+  # Productivity Management System
+  <h3 align="center" style="color:gray;">A High-Performance Python GUI for Tracking Workflows</h3>
+</div>
   # Productivity Management System
   <h3 align="center" style="color:gray;">A High-Performance Python GUI for Tracking Workflows</h3>
 </div>
