@@ -34,8 +34,9 @@
 </div>
 
 ---
-
-## 👥 The Development Team
+<div align="center">
+  <h2>👥 The Development Team 👥</h2>
+  <p>
 <p align="center">
   <b>Ian Paulo Lisud</b> • <b>Jesse Matthew Esteta</b> • <b>Jiro Luis Katindig</b><br>
   <b>Francis Elijah Formalejo</b> • <b>Marqui Cenar</b>
@@ -50,8 +51,9 @@ The system supports both solo and collaborative workflows, enabling users to wor
   
 
 ---
-
-## ⚙️ Core Modules
+<div align="center">
+  <h2>⚙️ Core Modules ⚙️</h2>
+  <p>
 <table align="center">
   <tr>
     <td align="center"><b>🔐 Authentication.py</b><br>Secure login logic & session handling</td>
@@ -64,8 +66,10 @@ The system supports both solo and collaborative workflows, enabling users to wor
 </table>
 
 ---
-
-## ✨ Key Features
+<div align="center">
+  <h2>✨ Key Features ✨</h2>
+  <p>
+## 
 - 🚀 **Tkinter Interface:** A native desktop experience with responsive `ttk` widgets.
 - 🆔 **UUID Integrity:** Every task and project is tracked with unique universal identifiers.
 - 📊 **Progress Monitoring:** Real-time completion updates for both solo and group projects.
@@ -73,8 +77,9 @@ The system supports both solo and collaborative workflows, enabling users to wor
 - 📂 **Persistent Storage:** Data remains intact across sessions via local file-handling.
 
 ---
-
-## 🛠️ Built With
+<div align="center">
+  <h2>🛠️ Built With 🛠️</h2>
+  <p>
 <p align="center">
   <img src="https://skillicons.dev/icons?i=py,vscode,github,git" />
 </p>
@@ -83,8 +88,9 @@ The system supports both solo and collaborative workflows, enabling users to wor
 </p>
 
 ---
-
-## 🚀 Getting Started
+<div align="center">
+  <h2>🚀 Getting Started 🚀</h2>
+  <p>
 ```bash```
 1. Clone the Repository
 Copy the project files from GitHub to your computer:
@@ -108,7 +114,9 @@ python3 Main.py
 ```
 
 ---
-## 📦 Prerequisites
+<div align="center">
+  <h2>📦 Prerequisites 📦</h2>
+  <p>
 - Python 3.8+
 - Tkinter library (Included in most Python installations)
 - Git
