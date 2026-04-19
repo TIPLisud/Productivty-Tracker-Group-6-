@@ -41,6 +41,7 @@
   <b>Ian Paulo Lisud</b> • <b>Jesse Matthew Esteta</b> • <b>Jiro Luis Katindig</b><br>
   <b>Francis Elijah Formalejo</b> • <b>Marqui Cenar</b>
 </p>
+</div>
 
 ---
 
@@ -68,13 +69,17 @@ The system supports both solo and collaborative workflows, enabling users to wor
 ---
 <div align="center">
   <h2>✨ Key Features ✨</h2>
-  <p>
-## 
+</div>
+
+<div align="left">
+
 - 🚀 **Tkinter Interface:** A native desktop experience with responsive `ttk` widgets.
 - 🆔 **UUID Integrity:** Every task and project is tracked with unique universal identifiers.
 - 📊 **Progress Monitoring:** Real-time completion updates for both solo and group projects.
 - 📅 **Deadline Tracking:** Integrated `datetime` calculations for urgent task prioritization.
 - 📂 **Persistent Storage:** Data remains intact across sessions via local file-handling.
+
+</div>
 
 ---
 <div align="center">
@@ -91,6 +96,8 @@ The system supports both solo and collaborative workflows, enabling users to wor
 <div align="center">
   <h2>🚀 Getting Started 🚀</h2>
   <p>
+<div align="left">
+
 ```bash```
 1. Clone the Repository
 Copy the project files from GitHub to your computer:
@@ -112,12 +119,18 @@ py Main.py
 ```bash
 python3 Main.py
 ```
+</div>
 
 ---
 <div align="center">
   <h2>📦 Prerequisites 📦</h2>
   <p>
+<div align="left">
+  
 - Python 3.8+
 - Tkinter library (Included in most Python installations)
 - Git
+
+</div>
+
 ---
